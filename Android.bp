@@ -18,3 +18,12 @@ java_library {
     ],
     sdk_version: "current",
 }
+
+java_library {
+    name: "nanohttpd-websocket",
+    srcs: [
+        "core/src/main/**/*.java",
+        "websocket/src/main/**/*.java",
+    ],
+    sdk_version: "current",
+}
