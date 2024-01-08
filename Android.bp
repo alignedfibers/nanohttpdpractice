@@ -26,6 +26,7 @@ license {
 
 java_library {
     name: "libnanohttpd",
+    host_supported: true,
     srcs: ["core/src/main/**/*.java"],
     sdk_version: "current",
     min_sdk_version: "30",
