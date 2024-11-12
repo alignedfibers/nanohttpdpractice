@@ -1160,29 +1160,22 @@ public abstract class NanoHTTPD {
         CONNECT,
         PATCH;
 
-        /**
-         *             if (method == null)
-         *                 return null;
-         *             try {
-         *                 return valueOf(method);
-         *             } catch (IllegalArgumentException e) {
-         *                 // TODO: Log it?
-         *                 return null;
-         *
-         *
-         */
-
         static Method lookup(String method) {
-            if (method == null){
+            if (method == null)
                 return null;
-            }
             try {
                 return valueOf(method);
-            }catch(IllegalArgumentException e){
-                //TODO: LOGTEST
+            } catch (IllegalArgumentException e) {
+                // TODO: Log it?
                 return null;
             }
         }
+
+        /*
+         * static Method lookup(String method) { for (Method m :
+         * Method.values()) { if (m.toString().equalsIgnoreCase(method)) {
+         * return m; } } return null; }
+         */
     }
 
     /**
