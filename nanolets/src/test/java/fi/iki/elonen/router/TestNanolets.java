@@ -141,14 +141,6 @@ public class TestNanolets {
                 "<html><body>User handler. Method: DELETE<br><h1>Uri parameters:</h1><div> Param: id&nbsp;Value: blabla</div><h1>Query parameters:</h1></body></html>", string);
         response.close();
     }
-    
-    @Test
-    public void doEncodedRequest() throws ClientProtocolException, IOException {
-        CloseableHttpClient httpclient = HttpClients.createDefault();
-        HttpGet httpget = new HttpGet("http://localhost:9090/general/param%201/param%202");
-        CloseableHttpResponse response = httpclient.execute(httpget);
-        Assert.assertEquals(Status.OK.getRequestStatus(), response.getStatusLine().getStatusCode());
-    }
 
     @Test
     public void doEncodedRequest() throws ClientProtocolException, IOException {
