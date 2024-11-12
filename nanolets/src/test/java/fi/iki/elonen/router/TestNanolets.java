@@ -141,7 +141,7 @@ public class TestNanolets {
                 "<html><body>User handler. Method: DELETE<br><h1>Uri parameters:</h1><div> Param: id&nbsp;Value: blabla</div><h1>Query parameters:</h1></body></html>", string);
         response.close();
     }
-    
+
     @Test
     public void doEncodedRequest() throws ClientProtocolException, IOException {
         CloseableHttpClient httpclient = HttpClients.createDefault();
