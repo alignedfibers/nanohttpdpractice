@@ -1,9 +1,9 @@
 description = 'NanoHttpd-Websocket'
 
 dependencies {
-	compile project(':nanohttpd')
-	testCompile group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
-	testCompile group: 'org.eclipse.jetty.websocket', name: 'websocket-client', version: '9.3.0.M2'
+	implementation project(':nanohttpd')
+	testImplementation group: 'org.mockito', name: 'mockito-all', version: '1.9.5'
+	testImplementation group: 'org.eclipse.jetty.websocket', name: 'websocket-client', version: '9.3.0.M2'
 }
 
 task wrapper(type: Wrapper) {
