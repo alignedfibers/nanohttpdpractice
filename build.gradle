@@ -8,17 +8,27 @@ allprojects {
 
 subprojects {
 	apply plugin: 'java'
-	sourceCompatibility = 1.7
-	targetCompatibility = 1.7
+
+	java {
+		sourceCompatibility = JavaVersion.VERSION_1_7
+		targetCompatibility = JavaVersion.VERSION_1_7
+	}
 	
 	repositories {
 		google()
 		mavenCentral()
-		jcenter()
+		//jcenter()
 	}
 	
 	dependencies {
 		testImplementation group: 'junit', name: 'junit', version: '4.12'
+	}
+
+	/*tasks.withType(JavaCompile) {
+		options.compilerArgs += "-Xlint:deprecation"
+	}*/
+	tasks.withType(JavaCompile).configureEach {
+		options.compilerArgs += "-Xlint:deprecation"
 	}
 }
 

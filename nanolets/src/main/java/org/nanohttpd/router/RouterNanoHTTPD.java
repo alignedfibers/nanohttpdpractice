@@ -377,7 +377,7 @@ public class RouterNanoHTTPD extends NanoHTTPD {
             String error = "General error!";
             if (handler != null) {
                 try {
-                    Object object = handler.newInstance();
+                    Object object = handler.getDeclaredConstructor().newInstance();
                     if (object instanceof UriResponder) {
                         UriResponder responder = (UriResponder) object;
                         switch (session.getMethod()) {

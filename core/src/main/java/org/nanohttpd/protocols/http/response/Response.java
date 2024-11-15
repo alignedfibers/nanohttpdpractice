@@ -86,13 +86,12 @@ public class Response implements Closeable {
      * Headers for the HTTP response. Use addHeader() to add lines. the
      * lowercase map is automatically kept up to date.
      */
-    @SuppressWarnings("serial")
     private final Map<String, String> header = new HashMap<String, String>() {
 
         public String put(String key, String value) {
             lowerCaseHeader.put(key == null ? key : key.toLowerCase(), value);
             return super.put(key, value);
-        };
+        }
     };
 
     /**
@@ -116,10 +115,10 @@ public class Response implements Closeable {
 
     private GzipUsage gzipUsage = GzipUsage.DEFAULT;
 
-    private static enum GzipUsage {
+    private enum GzipUsage {
         DEFAULT,
         ALWAYS,
-        NEVER;
+        NEVER
     }
 
     /**
@@ -347,7 +346,8 @@ public class Response implements Closeable {
         boolean sendEverything = pending == -1;
         while (pending > 0 || sendEverything) {
             long bytesToRead = sendEverything ? BUFFER_SIZE : Math.min(pending, BUFFER_SIZE);
-            int read = this.data.read(buff, 0, (int) bytesToRead);
+            
+            int read = this.data != null ? this.data.read(buff, 0, (int) bytesToRead) : 0;
             if (read <= 0) {
                 break;
             }

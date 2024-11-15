@@ -33,7 +33,7 @@ package org.nanohttpd.junit.protocols.http;
  * #L%
  */
 
-import static junit.framework.Assert.fail;
+import static org.junit.Assert.fail;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PipedInputStream;
@@ -117,7 +117,7 @@ public class HttpKeepAliveTest extends HttpServerTest {
                         try {
                             session.execute();
                         } catch (java.net.SocketException se) {
-                            junit.framework.Assert.assertEquals(se.getMessage(), "NanoHttpd Shutdown");
+                            org.junit.Assert.assertEquals(se.getMessage(), "NanoHttpd Shutdown");
                         }
                         assertResponse(outputStream, expected);
 

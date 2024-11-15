@@ -6,6 +6,9 @@ dependencies {
 	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
 }
 
-task wrapper(type: Wrapper) {
+/*task wrapper(type: Wrapper) {
+	gradleVersion = "4.4.1"
+}*/
+tasks.register("wrapper", Wrapper) {
 	gradleVersion = "4.4.1"
 }
