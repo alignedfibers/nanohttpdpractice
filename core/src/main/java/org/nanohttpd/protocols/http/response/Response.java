@@ -346,7 +346,7 @@ public class Response implements Closeable {
         boolean sendEverything = pending == -1;
         while (pending > 0 || sendEverything) {
             long bytesToRead = sendEverything ? BUFFER_SIZE : Math.min(pending, BUFFER_SIZE);
-            
+
             int read = this.data != null ? this.data.read(buff, 0, (int) bytesToRead) : 0;
             if (read <= 0) {
                 break;
