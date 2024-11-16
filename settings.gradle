@@ -1,3 +1,9 @@
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+    }
+}
 rootProject.name = 'nanohttpd-project'
 include ':nanohttpd'
 include ':nanohttpd-samples'

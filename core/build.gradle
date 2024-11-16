@@ -1,5 +1,10 @@
 description = 'NanoHttpd-Core'
-
+apply plugin: 'java'
+apply plugin: 'idea'
+java {
+	sourceCompatibility = JavaVersion.VERSION_11
+	targetCompatibility = JavaVersion.VERSION_11
+}
 dependencies {
 	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.2.5'
 	testImplementation group: 'org.apache.httpcomponents', name: 'httpmime', version: '4.2.5'

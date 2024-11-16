@@ -1,0 +1,21 @@
+ext.usejavapluginconfig = { project ->
+    project.apply plugin: 'java'
+    project.apply plugin: 'idea'
+
+    project.java {
+        sourceCompatibility = JavaVersion.VERSION_11
+        targetCompatibility = JavaVersion.VERSION_11
+    }
+    project.dependencies {
+        testImplementation group: 'junit', name: 'junit', version: '4.12'
+    }
+    project.tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs += "-Xlint:deprecation"
+    }
+    project.tasks.register("wrapper", Wrapper) {
+        gradleVersion = "4.4.1"
+    }
+}
+ext.useandroidpluginconfig = { project ->
+    project.apply plugin: 'com.android.library'
+}
