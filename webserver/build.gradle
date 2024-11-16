@@ -1,13 +1,7 @@
 description = 'NanoHttpd-Webserver'
-
+apply from: "$rootDir/common.gradle"
+usejavapluginconfig(project)
 dependencies {
 	implementation project(':nanohttpd')
 	testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
-}
-
-/*task wrapper(type: Wrapper) {
-	gradleVersion = "4.4.1"
-}*/
-tasks.register("wrapper", Wrapper) {
-	gradleVersion = "4.4.1"
 }

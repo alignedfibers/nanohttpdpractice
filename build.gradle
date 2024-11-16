@@ -3,42 +3,17 @@
  * moved the common build configs for all/subprojects to common.gradle ext scripts
  */
 plugins {
-	id 'com.android.application' version '7.0.4' apply false
-	id 'com.android.library' version '7.0.4' apply false
+	//id 'com.android.application' version '4.2.0' apply false
+	id 'com.android.library' version '4.2.0' apply false
 	id 'org.jetbrains.kotlin.android' version '2.0.20' apply false
 }
 allprojects {
-	apply plugin: 'java'
-	apply plugin: 'idea'
-
 	group = 'org.nanohttpd'
 	version = '2.3.2-SNAPSHOT'
 }
 
 subprojects {
-	apply plugin: 'java'
 
-	java {
-		sourceCompatibility = JavaVersion.VERSION_11
-		targetCompatibility = JavaVersion.VERSION_11
-	}
-	
-	repositories {
-		google()
-		mavenCentral()
-		jcenter()
-	}
-	
-	dependencies {
-		testImplementation group: 'junit', name: 'junit', version: '4.12'
-	}
-
-	/*tasks.withType(JavaCompile) {
-		options.compilerArgs += "-Xlint:deprecation"
-	}*/
-	tasks.withType(JavaCompile).configureEach {
-		options.compilerArgs += "-Xlint:deprecation"
-	}
 }
 
 /*task wrapper(type: Wrapper) {
