@@ -3,13 +3,30 @@ apply from: "$rootDir/common.gradle"
 useandroidpluginconfig(project)
 //apply plugin: 'com.android.library'
 //apply plugin: 'org.jetbrains.kotlin.android'
-
+dependencies {
+    implementation project(':nanohttpd')
+    androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
+    //api 'com.android.support:appcompat-v7:24.2.1'
+    api 'com.android.support:support-compat:28.0.0'
+    testImplementation 'junit:junit:4.12'
+}
 android {
+    lintOptions {
+        abortOnError false
+    }
     compileSdkVersion 33
     defaultConfig {
+        //applicationId "org.nanohttpd.webserver"
         minSdkVersion 28
         targetSdkVersion 33
-        //namespace "org.jtiris.nanohttpd.webserver"
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        //namespace "org.jtiris.android.nanohttpd.webserver"
+        //namespace "org.nanohttpd.webserver"
     }
 
     compileOptions {
@@ -18,9 +35,15 @@ android {
         //isCoreLibraryDesugaringEnabled = true
     }
 
-    sourceSets {
+    /*sourceSets {
         main {
             java.srcDirs = ['../src'] // Points to the shared Java source directory
+        }
+    }*/
+    buildTypes {
+        release {
+            minifyEnabled false
+            //proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
     }
     // Build outputs
@@ -36,12 +59,15 @@ android {
 dependencies {
     implementation project(':nanohttpd') // Reference the core project dependency
     //coreLibraryDesugaring 'com.android.tools:desugar_jdk_libs:2.1.3'
-    //testImplementation 'junit:junit:4.13.2'
+    //testImplementation 'junit:junit:4.12'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
 }
 
-/*tasks.named('build').configure {
+tasks.named('build').configure {
     dependsOn ':nanohttpd-webserver:build' // Ensures the Java library builds first
-}*/
+}
 
 /*tasks.register("wrapper", Wrapper) {
     gradleVersion = "4.4.1"
