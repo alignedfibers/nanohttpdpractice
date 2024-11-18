@@ -6,9 +6,9 @@ dependencies {
     testImplementation group: 'org.apache.httpcomponents', name: 'httpclient', version: '4.4.1'
 }
 android {
-    lintOptions {
+    /*lintOptions {
         abortOnError false
-    }
+    }*/
     compileSdkVersion 33
     defaultConfig {
         //applicationId "org.nanohttpd.webserver"

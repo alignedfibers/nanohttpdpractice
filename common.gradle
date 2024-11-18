@@ -31,7 +31,8 @@ ext.usejavapluginconfig = { project ->
         options.compilerArgs += "-Xlint:deprecation"
     }
     project.tasks.register("wrapper", Wrapper) {
-        gradleVersion = "4.4.1"
+        //gradleVersion = "4.4.1"
+        gradleVersion = "7.0.2"
     }
 }
 
@@ -48,12 +49,8 @@ ext.useandroidpluginconfig = { project ->
         //apply plugin: 'org.jetbrains.kotlin.android'
         //apply plugin: 'com.android.application'
         repositories{
-           /* google()
-            mavenCentral()
-            jcenter()*/
         }
         dependencies {
-            //implementation project(':nanohttpd')
             testImplementation 'junit:junit:4.13.2'
             androidTestImplementation('com.android.support.test.espresso:espresso-core:2.2.2', {
                 exclude group: 'com.android.support', module: 'support-annotations'
@@ -68,7 +65,11 @@ ext.useandroidpluginconfig = { project ->
     project.subprojects {
 
     }
+    project.tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs += "-Xlint:deprecation"
+    }
     project.tasks.register("wrapper", Wrapper) {
-        gradleVersion = "4.4.1"
+        //gradleVersion = "4.4.1"
+        gradleVersion = "7.0.2"
     }
 }
