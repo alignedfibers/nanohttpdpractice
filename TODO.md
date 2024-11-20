@@ -23,6 +23,9 @@
 - [] Figure out why the libraries don't work, try the JAR files vs the AAR files vs the PKG files, get it working.
 - [] Review the requirements for .java files to compile under JDK 17 without issues and start upgrading modules one by one.
 - [] Since the project has both a Maven build and a gradle build, and maven is currently working, make sure Maven tags along for the ride.
+- [] Since gradle is not generating the documentation use gradle exec task to trigger maven "generatMavenSite" to generate the docs.
+- [] Add the Gradle Release plugin then align the release information in the Maven release files and Gradle, add the MavenPublish plugin to Gradle
+- [] Test publishing to Maven with another simple library. Then publish. ( I think )
 
 *[ ]*  
 *[ ]*  

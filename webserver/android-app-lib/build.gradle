@@ -17,20 +17,28 @@ android {
         versionCode 1
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-        //namespace "org.nanohttpd.webserver"
+        namespace "org.nanohttpd.webserver"
     }
 
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
-        //isCoreLibraryDesugaringEnabled = true
+        coreLibraryDesugaringEnabled true
     }
 
-    /*sourceSets {
-        main {
-            java.srcDirs = ['../src'] // Points to the shared Java source directory
-        }
+    /*tasks.withType(JavaCompile).configureEach {
+        options.compilerArgs += "-Xlint:deprecation"
     }*/
+
+    sourceSets {
+        main {
+            java.srcDirs = [] // Clear default srcDirs
+            //java.srcDir(fileTree(dir: "${rootProject.projectDir}/core/src/main", include: '**/*.java'))
+            //java.srcDir(fileTree(dir: "${rootProject.projectDir}/webserver/src/main/java", include: '**/*.java'))
+            java.srcDir(file("${rootProject.projectDir}/webserver/src/main"))
+        }
+    }
+
     buildTypes {
         release {
             minifyEnabled false
