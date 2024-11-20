@@ -251,8 +251,7 @@ public class TestHttpServer extends AbstractTestHttpServer {
             response = httpClient.execute(httpGet);
             HttpEntity entity = response.getEntity();
             String responseString = new String(readContents(entity), "UTF-8");
-            assertThat("The data from the beginning of the file should have been skipped as specified in the 'range' header", responseString,
-                    not(containsString("<head>")));
+            assertThat("The data from the beginning of the file should have been skipped as specified in the 'range' header", responseString, not(containsString("<head>")));
             assertThat("The response should contain the data from the end of the file since end position was not given in the 'range' header", responseString,
                     containsString("</head>"));
             Assert.assertEquals("The content length should be the length starting from the requested byte", "74", response.getHeaders("Content-Length")[0].getValue());
@@ -295,8 +294,7 @@ public class TestHttpServer extends AbstractTestHttpServer {
             response = httpClient.execute(httpGet);
             HttpEntity entity = response.getEntity();
             String responseString = new String(readContents(entity), "UTF-8");
-            assertThat("The data from the beginning of the file should have been skipped as specified in the 'range' header", responseString,
-                    not(containsString("<head>")));
+            assertThat("The data from the beginning of the file should have been skipped as specified in the 'range' header", responseString, not(containsString("<head>")));
             assertThat("The data from the end of the file should have been skipped as specified in the 'range' header", responseString, not(containsString("</head>")));
             Assert.assertEquals("The 'Content-Length' should be the length from the requested start position to end position", "31",
                     response.getHeaders("Content-Length")[0].getValue());

@@ -1,7 +1,7 @@
 ## TODO NEEDED TO KEEP ME ON TRACK
 
 *[ ] Configure and setup android nanohttpd package build with component selection*  
-- [X] Upgrade to Java 11, AGP 7, Gradel 7.01 and setup common.gradle to set optional build sdk configs.
+- [X] Upgrade to Java 11, AGP 7.0.1, Gradel 7.0.2 and setup common.gradle to set optional build sdk configs.
 - [X] Get a working AAR build for one of the sub projects modules.
 - [X] Cleanup and make a clear separation of module/project dependencies and build specific dependencies.
 - [X] Review options to upgrade to Java SDK 17 and realize multiple compile errors in the code hold this off.
