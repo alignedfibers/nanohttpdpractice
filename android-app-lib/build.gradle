@@ -1,4 +1,4 @@
-description = 'NanoHttpd-Webserver-Android'
+description = 'LibNanoHttpd-Android'
 apply from: "$rootDir/common.gradle"
 useandroidpluginconfig(project)
 dependencies {
@@ -35,7 +35,10 @@ android {
             java.srcDirs = [] // Clear default srcDirs
             //java.srcDir(fileTree(dir: "${rootProject.projectDir}/core/src/main", include: '**/*.java'))
             //java.srcDir(fileTree(dir: "${rootProject.projectDir}/webserver/src/main/java", include: '**/*.java'))
+            java.srcDir(file("${rootProject.projectDir}/core/src/main"))
+            java.srcDir(file("${rootProject.projectDir}/websocket/src/main"))
             java.srcDir(file("${rootProject.projectDir}/webserver/src/main"))
+            //java.srcDir(file("${rootProject.projectDir}/webserver/src/test"))
         }
     }
 

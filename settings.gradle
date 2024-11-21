@@ -21,4 +21,4 @@ project(':nanohttpd-websocket').projectDir = "$rootDir/websocket" as File
 project(':nanohttpd-webserver-markdown-plugin').projectDir = "$rootDir/markdown-plugin" as File
 project(':nanohttpd-nanolets').projectDir = "$rootDir/nanolets" as File
 project(':nanohttpd-apache-fileupload').projectDir = "$rootDir/fileupload" as File
-project(':nanohttpd-webserver-android').projectDir = "$rootDir/webserver/android-app-lib" as File
+project(':nanohttpd-webserver-android').projectDir = "$rootDir/android-app-lib" as File

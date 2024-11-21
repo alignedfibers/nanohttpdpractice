@@ -15,7 +15,7 @@
 - [X] Identified the codebase is compatible with maximum of JDK 11, and AGP 7 is only AndroidGradlePlug version supporting, w/ max Gradle version of 7.0.2
 - [X] Currently using a copy of the source directory, need to setup the sourceset to pattern match a source directory outside of it's own module directory.
 - [] Once source set works, move the module directory to root of project and enforce compilation with AAR and JAR w/ LibraryDesugaringEnabled
-- [] Rollup into two separate packages, one using the desugared jars and another with AAR, as this is for practic, and keep LIB folder for both
+- [] Rollup into two separate packages, one using the desugared jars and another with AAR, and keep LIB folder the not rolled up jars/aars
 - [] Transform the Java Source Files Package Namespaces during compilation to prepend the package namespace and ensure no namespace collisions (Android)
 - [] Add something to the read me explaining what the Android build is why it is App Specific and not AOSP System and provide example run.
 - [] Set the source set to pull in and build all of the subprojects/modules into the android library, but make easy to comment out.
