@@ -58,8 +58,8 @@ android {
     }*/
 }
 
-tasks.named('build').configure {
-    dependsOn ':nanohttpd-webserver:build' // Ensures the Java library builds first
-}
+/*tasks.named('build').configure {
+    dependsOn ':nanohttpd-webserver:build'
+}*/
 
 
