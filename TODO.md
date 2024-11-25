@@ -26,7 +26,13 @@
 - [] Since gradle is not generating the documentation use gradle exec task to trigger maven "generatMavenSite" to generate the docs.
 - [] Add the Gradle Release plugin then align the release information in the Maven release files and Gradle, add the MavenPublish plugin to Gradle
 - [] Test publishing to Maven with another simple library. Then publish. ( I think )
-
+- [] Update the maven class docs to deploy to the github page instead, and setup a pre-release repository on github as well,
+- [] Condition final release so it never runs without explicit change of the flags needed.
+- [] Gradle site generation docs via something like asciidoctor, jetbrains.dokka, or exec task in gradle task generateSite(type: Exec) {commandLine 'mvn', 'site'}
+- [] The license-maven-plugin does not have a direct equivalent in Gradle - task enforceLicenses(type: Exec) {commandLine 'mvn', 'license:update-file-header'}
+- [] Review and consider adding the pmd code quality analysis tool into the Gradle Build to keep alignment with the original maven build.
+- [] Add spotbugs plugin in gradle for the alignment with the mvn build. I will do a check to make sure if any of those tasks don't run, we can leave it out.
+- 
 *[ ]*  
 *[ ]*  
 *[ ]*  
